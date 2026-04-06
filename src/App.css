@@ -1,0 +1,32 @@
+body{
+  background: #1F1F6E;
+  font-family: 'Friends';
+}
+
+@font-face {
+  font-family: 'Friends';
+  src: url('./assets/fonts/Friends-Regular.ttf') format('truetype');
+}
+
+html body .apexcharts-menu{
+  background-color: #1e1e4f;
+}
+
+
+body .apexcharts-menu {
+  background-color: #1e1e4f !important;
+  
+  border: 1px solid  ;
+}
+
+body .apexcharts-menu-item {
+  color: #e5e7eb ;
+}
+
+body .apexcharts-menu-item:hover {
+  background: #313138 ;
+}
+
+.apexcharts-toolbar {
+  color: #e5e7eb !important;
+}

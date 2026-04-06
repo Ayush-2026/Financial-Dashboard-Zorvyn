@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* ── Insights page animations ──────────────────────────────── */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+.dash-card {
+  animation: fadeSlideIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.dash-row {
+  animation: fadeSlideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.balance-value {
+  animation: countUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.5; transform: scale(1.35); }
+}
+
+@keyframes barGrow {
+  from { width: 0%; }
+}
+
+.insight-card {
+  animation: fadeSlideUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.shimmer-box {
+  background: linear-gradient(
+    90deg,
+    #1a1a5a 25%,
+    #272768 50%,
+    #1a1a5a 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.5s ease infinite;
+}
+
+.live-dot {
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.insight-bar {
+  animation: barGrow 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Dark theme (default) ─────────────────────────────────── */
+:root {
+  --bg-page:    #0A0A37;
+  --bg-card:    #151548;
+  --bg-deep:    #1a1a5a;
+  --bg-input:   #0e0e3a;
+  --bg-control: #1c1c4a;
+  --bg-active:  #0E154B;
+  --bg-hover:   #2a2a5a;
+
+  --border:     rgba(76, 76, 154, 0.4);
+  --border-s:   #4c4c9a;
+  --border-sub: #3a3a7a;
+
+  --text:        #ffffff;
+  --text-muted:  #9ca3af;
+  --text-accent: #cbd5f5;
+  --text-dim:    #9090c0;
+  --text-faint:  #4a4a7a;
+
+  --divider:    rgba(255, 255, 255, 0.06);
+  --subtle-bg:  rgba(255, 255, 255, 0.04);
+  --bg-panel:   rgba(10, 10, 55, 0.65);
+
+  --chart-label: #cbd5f5;
+  --chart-grid:  #4c4c9a;
+}
+
+/* ── Light theme ──────────────────────────────────────────── */
+:root.light {
+  --bg-page:    #f0f4ff;
+  --bg-card:    #ffffff;
+  --bg-deep:    #eaecf9;
+  --bg-input:   #eef0fb;
+  --bg-control: #e2e5f5;
+  --bg-active:  #d5d9f5;
+  --bg-hover:   #dde1f5;
+
+  --border:     rgba(160, 165, 220, 0.4);
+  --border-s:   #b0b5e0;
+  --border-sub: #c5caec;
+
+  --text:        #1a1a3e;
+  --text-muted:  #6b7280;
+  --text-accent: #3a3a7e;
+  --text-dim:    #5a5a8a;
+  --text-faint:  #9898b8;
+
+  --divider:    rgba(0, 0, 0, 0.07);
+  --subtle-bg:  rgba(0, 0, 0, 0.025);
+  --bg-panel:   rgba(225, 230, 250, 0.95);
+
+  --chart-label: #3a3a7e;
+  --chart-grid:  #c5caec;
+}
+
+/* ── Sidebar icon tint in light mode ─────────────────────── */
+:root.light .sidebar-icon {
+  filter: brightness(0) opacity(0.65);
+}
+
+/* ── Light shimmer override ───────────────────────────────── */
+:root.light .shimmer-box {
+  background: linear-gradient(
+    90deg,
+    #dde3f5 25%,
+    #c8d0ef 50%,
+    #dde3f5 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.5s ease infinite;
+}
